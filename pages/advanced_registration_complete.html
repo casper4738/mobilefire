@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="UTF-8">
+	<meta name="description" content="Mobile fire prototype">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#53e3a6">
+	
+	<title>Mobile Fire</title>
+  <link rel="stylesheet" type="text/css" href="../styles/fire_style.css">
+  
+  
+</head>
+
+<body class="advanced_regis_complete">
+
+  <header class = "header">
+    <h1 class = "header_title">Mobile Fire</h1>
+  </header>
+  
+  <div class="form_header">
+    <h3 id = "form_header_title">Advanced Registration Completed</h3>
+  </div>
+  <hr class="header_separator"/>
+  
+  
+  <div class="adv_regis_summary_container" style="margin-top:25px;">
+    <p style="font-size:12px;" class="summary_desc">Your advanced registration has been completed.</p>
+  </div>
+  
+  <div class="input_field_container">
+    <button onclick="submitForm()" content="submit" class="submit_button" type="button" name="submit" id="submit">Finish</button>
+  </div>
+  
+  <script>
+    function submitForm(){
+      var xhr = new XMLHttpRequest();
+      var url = "https://mobilefire-fandy91.c9users.io/advanced_regis_cpl";
+			xhr.open("POST", url, true);
+			xhr.setRequestHeader("Content-type", "text/plain");
+			xhr.onreadystatechange = function () {
+				if (xhr.readyState === 4 && xhr.status === 200) {
+					console.log("JSON SENT SUCCESSFULLY");
+				}
+			};
+			xhr.send("Complete");
+      window.location.href = "../index.html";
+    }
+  </script>
+  
+</body>
+
+</html>

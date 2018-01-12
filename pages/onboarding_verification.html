@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="Mobile fire prototype">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#53e3a6">
+	
+	<title>Mobile Fire</title>
+  <link rel="stylesheet" type="text/css" href="../styles/fire_style.css">
+</head>
+
+<body class="onboarding_verification_page">
+  <header class = "header">
+    <h1 class = "header_title">Mobile Fire</h1>
+  </header>
+  
+  <div class="form_header">
+    <h3 id = "form_header_title">Sign Up - Mobile Phone Verification</h3>
+  </div>
+  <hr class="header_separator"/>
+  
+  <div class="verif_instruction_container">
+    <h5 class = "verif_instruction" style="word-wrap:normal;">Enter 4 digit passcode that has been sent to your mobile number</h3>
+  </div>
+  
+  <div class="form_container" id="onboarding_verif_div" style="text-align:center;">
+    <form>
+      <input class="verif_token_input" type="number" name="verif_token1" id="verif_token1">
+      <input class="verif_token_input" type="number" name="verif_token2" id="verif_token2">
+      <input class="verif_token_input" type="number" name="verif_token3" id="verif_token3">
+      <input class="verif_token_input" type="number" name="verif_token4" id="verif_token4">
+    </form>
+  </div>
+  
+  <div class="verif_instruction_container" style="margin-top:25px;">
+    <h5 style="display:inline;"  class = "verif_instruction" style="word-wrap:normal;">Haven't received the message?</h3> <a style="font-size:11px;" href="./onboarding_verification.html">Send another message</a>
+  </div>
+  
+  <div class="verif_instruction_container" style="margin-top:10px;">
+    <h5 style="display:inline;" class = "verif_instruction" style="word-wrap:normal;">Is this your phone 089662593790?</h3> <a style="font-size:11px;" href="./onboarding_verification.html">Choose my phone number</a>
+  </div>
+  
+  <div class="input_field_container">
+    <button onclick="formSubmit()" content="submit" class="submit_button" type="button" name="submit" id="submit">Submit</button>
+  </div>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script>
+    function formSubmit(){
+      window.location.href = "./onboarding_complete.html";
+    }
+  </script>
+  <script src="../scripts/verif.js"></script>
+  
+</body>
+
+</html>

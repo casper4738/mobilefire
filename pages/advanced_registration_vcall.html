@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="UTF-8">
+	<meta name="description" content="Mobile fire prototype">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#53e3a6">
+	
+	<title>Mobile Fire</title>
+  <link rel="stylesheet" type="text/css" href="../styles/fire_style.css">
+  
+  
+</head>
+
+<body class="advanced_regis_summary2">
+
+  <header class = "header">
+    <h1 class = "header_title">Mobile Fire</h1>
+  </header>
+  
+  <div class="form_header">
+    <h3 id = "form_header_title">Advanced Registration - Video Call</h3>
+  </div>
+  <hr class="header_separator"/>
+  
+  <div class="square_video">
+    <video class="video_content" id="video_call" autoplay playsinline muted></video>
+  </div>
+  
+  <div class="input_field_container">
+   <button onclick="formSubmit()" content="submit" class="submit_button" type="button" name="submit" id="submit">End Call</button>
+  </div>
+  <!--<div class="input_field_container">
+   <button onclick="startVideo()" content="submit" class="submit_button" type="button" name="submit" id="submit"Start Call</button>
+  </div>-->
+  
+  <script>
+    function formSubmit(){
+      window.location.href = "./advanced_registration_complete.html";
+    }
+    
+    /*function startVideo(){
+      alert("Video Started");
+      var video = document.getElementById('video_call');
+            var mediaConfig =  { video: true };
+            var errBack = function(e) {
+              alert("error occured")
+            	console.log('An error has occurred!', e)
+            };
+
+			// Put video listeners into place
+            if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+                navigator.mediaDevices.getUserMedia(mediaConfig).then(function(stream) {
+                    video.src = window.URL.createObjectURL(stream);
+                    video.play();
+                });
+            }
+
+            /* Legacy code below! */
+       /*else if(navigator.getUserMedia) { // Standard
+				navigator.getUserMedia(mediaConfig, function(stream) {
+					video.src = stream;
+					video.play();
+				}, errBack);
+			} else if(navigator.webkitGetUserMedia) { // WebKit-prefixed
+				navigator.webkitGetUserMedia(mediaConfig, function(stream){
+					video.src = window.webkitURL.createObjectURL(stream);
+					video.play();
+				}, errBack);
+			} else if(navigator.mozGetUserMedia) { // Mozilla-prefixed
+				navigator.mozGetUserMedia(mediaConfig, function(stream){
+					video.src = window.URL.createObjectURL(stream);
+					video.play();
+				}, errBack);
+			}
+    }*/
+   // Put event listeners into place
+		window.addEventListener("DOMContentLoaded", function() {
+		       //alert(navigator.userAgent);
+			      //alert("DOM LOADED");
+            var video = document.getElementById('video_call');
+            var mediaConfig =  { video: true, facingMode: 'user' };
+            var errBack = function(e) {
+            	console.log('An error has occurred!', e)
+            };
+
+			// Put video listeners into place
+            if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+                navigator.mediaDevices.getUserMedia(mediaConfig).then(function(stream) {
+                    //alert("going to play video");
+                    video.src = window.URL.createObjectURL(stream);
+                    video.play();
+                });
+            }
+
+            /* Legacy code below! */
+       else if(navigator.getUserMedia) { // Standard
+				navigator.getUserMedia(mediaConfig, function(stream) {
+				  //alert("going to play video");
+					video.src = stream;
+					video.play();
+				}, errBack);
+			} else if(navigator.webkitGetUserMedia) { // WebKit-prefixed
+				navigator.webkitGetUserMedia(mediaConfig, function(stream){
+				  //alert("going to play video");
+					video.src = window.webkitURL.createObjectURL(stream);
+					video.play();
+				}, errBack);
+			} else if(navigator.mozGetUserMedia) { // Mozilla-prefixed
+				navigator.mozGetUserMedia(mediaConfig, function(stream){
+				  //alert("going to play video");
+					video.src = window.URL.createObjectURL(stream);
+					video.play();
+				}, errBack);
+			}
+			else{
+			  video = document.getElementById('video_call');
+
+        navigator.getUserMedia = navigator.getUserMedia ||
+                                 navigator.webkitGetUserMedia ||
+                                 navigator.mozGetUserMedia;
+  
+       navigator.getUserMedia(
+       {
+           audio: true,
+           video: { facingMode: "user" }
+       }, function (stream) {
+           video.srcObject = stream;
+           //video.src = window.URL.createObjectURL(stream);
+       },
+       function (err) {           
+           alert(err.name);
+       });
+			}
+
+		}, false);
+    </script>
+</body>
+</html>

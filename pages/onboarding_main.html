@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="UTF-8">
+	<meta name="description" content="Mobile fire prototype">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#53e3a6">
+	
+	<title>Mobile Fire</title>
+  <link rel="stylesheet" type="text/css" href="../styles/fire_style.css">
+  <!--<link rel="manifest" href="manifest.json"> -->
+  
+</head>
+
+<body class="index_page">
+  <header class = "header">
+    <h1 class = "header_title">Mobile Fire</h1>
+  </header>
+  
+  <div class="form_header">
+    <h3 id = "form_header_title">Sign Up - Customer Detail</h3>
+  </div>
+  <hr class="header_separator"/>
+  
+  <div class="form_container" id="onboarding_div">
+    <form id="onboarding_form">
+      <div class="input_field_container">
+        <p class="field_name">First Name</p><p class="separator">  :  </p>
+        <input class="standalone_text_input" type="text" name="first_name" id="first_name">
+      </div>
+      
+      <div class="input_field_container">
+        <p class="field_name">Last Name</p><p class="separator">  :  </p>
+        <input class="standalone_text_input" type="text" name="last_name" id="last_name">
+      </div>
+      
+      <div class="input_field_container">
+        <p class="field_name">Gender</p><p class="separator">  :  </p>
+        <select class="standalone_dropdown" name="gender" id="gender">
+  				<option value="Select">Select</option>
+          <option value="Male">Male</option>
+  				<option value="Female">Female</option>
+			  </select>
+      </div>
+      
+      <div class="input_field_container">
+        <p class="field_name">Citizenship</p><p class="separator">  :  </p>
+        <select class="standalone_dropdown_long" name="citizenship" id="citizenship">
+  				<option value="Select">Select Country</option>
+          <option value="Indonesia">Indonesia</option>
+  				<option value="United States">United States</option>
+			  </select>
+      </div>
+      
+      <div class="input_field_container">
+        <p class="field_name">Place of Birth</p><p class="separator">  :  </p>
+        <select class="standalone_dropdown_long" name="birth_country" id="birth_country">
+  				<option value="Select">Select Country</option>
+          <option value="Indonesia">Indonesia</option>
+  				<option value="United States">United States</option>
+			  </select>
+      </div>
+      
+      <div class="input_field_container">
+        <p class="field_name" style="visibility:hidden;"> .</p><p class="separator" style="visibility:hidden;"> .</p>
+        <select class="standalone_dropdown_long" name="birth_city" id="birth_city">
+  				<option value="Select">Select City</option>
+          <option value="Indonesia">Jakarta</option>
+  				<option value="United States">London</option>
+			  </select>
+      </div>
+      
+      <div class="input_field_container">
+        <p class="field_name">Date of birth</p><p class="separator">:</p>
+        <select style="margin-left:3%;" class="dropdown_triple" name="birth_day" id="birth_day">
+  				<option value="Select">DD</option>
+          <option value="01">01</option>
+  				<option value="02">02</option>
+			  </select>
+        <select class="dropdown_triple" name="birth_month" id="birth_month">
+  				<option value="Select">MM</option>
+          <option value="01">01</option>
+  				<option value="02">02</option>
+			  </select>
+        <select class="dropdown_triple" name="birth_year" id="birth_year">
+  				<option value="Select">YYYY</option>
+          <option value="01">1996</option>
+  				<option value="02">1997</option>
+			  </select>
+      </div>
+      
+      <div class="input_field_container">
+        <p class="field_name">Mobile No</p><p class="separator">:</p>
+        <select class="dropdown_short" name="mobile_no_prefix" id="mobile_no_prefix">
+  				<option value="Select">Select</option>
+          <option value="Indonesia">+62</option>
+  				<option value="United States">+01</option>
+			  </select>
+        <input class="text_input_short" type="text" name="mobile_no" id="mobile_no">
+      </div>
+
+      <div class="input_field_container">
+        <p class="field_name">Phone No</p><p class="separator">:</p>
+        <select class="dropdown_short" name="phone_no_prefix" id="phone_no_prefix">
+  				<option value="Select">Select</option>
+          <option value="Indonesia">021</option>
+  				<option value="United States">213</option>
+			  </select>
+        <input class="text_input_short" type="text" name="phone_no" id="phone_no">
+      </div>
+      
+      <div class="input_field_container">
+        <p class="field_name">Email Address</p><p class="separator">  :  </p>
+        <input class="standalone_text_input" type="text" name="email" id="email">
+      </div>
+      
+      <div class="input_field_container">
+        <p class="field_name">Password</p><p class="separator">  :  </p>
+        <input class="standalone_text_input" type="text" name="password" id="password">
+      </div>
+
+      <div class="input_field_container">
+        <button onclick="formSubmit()" content="submit" class="submit_button" type="button" name="submit" id="submit">Submit</button>
+      </div>
+                  
+    </form>
+  </div>
+  
+  <script>
+    function formSubmit(){
+      var xhr = new XMLHttpRequest();                 
+			var url = "https://mobilefire-fandy91.c9users.io/verificationCode";
+			xhr.open("GET", url, true);
+			xhr.setRequestHeader("Content-type", "text/plain");
+			xhr.onreadystatechange = function () {
+				if (xhr.readyState === 4 && xhr.status === 200) {
+					console.log("JSON SENT SUCCESSFULLY");
+				}
+			};
+			xhr.send();
+      window.location.href = "./onboarding_verification.html";
+    }
+  </script>
+  <!--<script src="scripts/main.js"></script>-->
+</body>
+
+</html>

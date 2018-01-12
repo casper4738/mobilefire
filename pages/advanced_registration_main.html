@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="UTF-8">
+	<meta name="description" content="Mobile fire prototype">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#53e3a6">
+	
+	<title>Mobile Fire</title>
+  <link rel="stylesheet" type="text/css" href="../styles/fire_style.css">
+  
+  
+</head>
+
+<body class="advanced_registration_main">
+
+  <header class = "header">
+    <h1 class = "header_title">Mobile Fire</h1>
+  </header>
+  
+  <div class="form_header">
+    <h3 id = "form_header_title">Advanced Registration</h3>
+  </div>
+  <hr class="header_separator"/>
+  
+  <div class="input_field_container">
+    <p class="field_name">Email Address</p><p class="separator" style="color:black;"><pre style="color:black;"> :  test123@gmail.com</pre></p>
+  </div>
+  
+  <div class="input_field_container" style="margin-top:10px;">
+    <p class="field_name">Place of Birth</p><p class="separator" style="color:black;"><pre style="color:black;"> :  Jakarta, Indonesia</pre></p>
+  </div>
+  
+  <div class="input_field_container" style="margin-top:10px;">
+    <p class="field_name">Date of Birth</p><p class="separator" style="color:black;"><pre style="color:black;"> :  09/08/1990</pre></p>
+  </div>
+  <hr class="header_separator"/>
+  
+  <div class="form_container" id="advaced_regis_form_div" style="margin-top:10px;">
+    <form id="advanced_regis_form">
+    
+      <div class="input_field_container">
+        <p class="field_name">ID Type</p><p class="separator">:</p>
+        <select class="standalone_dropdown_long" name="id_type" id="id_type">
+  				<option value="Select">Select ID Type</option>
+          <option value="ktp">KTP</option>
+  				<option value="sim">SIM</option>
+          <option value="npwp">NPWP</option>
+			  </select>
+      </div>    
+      
+      <div class="input_field_container">
+        <p class="field_name">ID Number</p><p class="separator">  :  </p>
+        <input class="standalone_text_input" type="text" name="id_number" id="id_number">
+      </div>
+      
+      <div class="input_field_container">
+        <p class="field_name">ID Country Origin</p><p class="separator">  :  </p>
+        <select class="standalone_dropdown_long" name="id_country_origin" id="id_country_origin">
+  				<option value="Select">Select Country</option>
+          <option value="Indonesia">Indonesia</option>
+  				<option value="United States">United States</option>
+			  </select>
+      </div>
+      
+      <div class="input_field_container">
+        <p class="field_name">Address 1</p><p class="separator">  :  </p>
+        <input class="standalone_text_input" type="text" name="address_1" id="address_1">
+      </div>
+      
+      <div class="input_field_container">
+        <p class="field_name">Address 2</p><p class="separator">  :  </p>
+        <input class="standalone_text_input" type="text" name="address_2" id="address_2">
+      </div>
+      
+      <div class="input_field_container">
+        <p class="field_name">State</p><p class="separator">  :  </p>
+        <select class="standalone_dropdown_long" name="state" id="state">
+  				<option value="Select">Select State</option>
+          <option value="state1">State1</option>
+  				<option value="state2 States">State2</option>
+			  </select>
+      </div>
+      
+      <div class="input_field_container">
+        <p class="field_name">City</p><p class="separator">  :  </p>
+        <select class="standalone_dropdown_long" name="city" id="city">
+  				<option value="Select">Select City</option>
+          <option value="Indonesia">Jakarta</option>
+  				<option value="United States">New York</option>
+			  </select>
+      </div>
+      
+      <div class="input_field_container">
+        <p class="field_name">Country</p><p class="separator">  :  </p>
+        <select class="standalone_dropdown_long" name="country" id="country">
+  				<option value="Select">Select Country</option>
+          <option value="Indonesia">Indonesia</option>
+  				<option value="United States">United States</option>
+			  </select>
+      </div>
+      
+      <div class="input_field_container">
+        <p class="field_name">Postal Code</p><p class="separator">  :  </p>
+        <input style="width:20%;" class="standalone_text_input" type="text" name="postal_code" id="postal_code">
+      </div>
+      
+      <div class="input_field_container">
+        <button onclick="formSubmit()" content="submit" class="submit_button" type="button" name="submit" id="submit">Submit</button>
+      </div>
+              
+    </form>
+  </div>
+  
+  <script>
+    function formSubmit(){
+      window.location.href = "./advanced_registration_idupload.html";
+    }
+  </script>
+  
+</body>
+
+</html>

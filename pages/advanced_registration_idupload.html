@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="UTF-8">
+	<meta name="description" content="Mobile fire prototype">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#53e3a6">
+	
+	<title>Mobile Fire</title>
+  <link rel="stylesheet" type="text/css" href="../styles/fire_style.css">
+  
+  
+</head>
+
+<body class="advanced_registration_main">
+
+  <header class = "header">
+    <h1 class = "header_title">Mobile Fire</h1>
+  </header>
+  
+  <div class="form_header">
+    <h3 id = "form_header_title">Advanced Registration</h3>
+  </div>
+  <hr class="header_separator"/>
+  
+  <div class="input_field_container">
+    <p class="field_name">Email Address</p><p class="separator" style="color:black;"><pre style="color:black;"> :  test123@gmail.com</pre></p>
+  </div>
+  
+  <div class="input_field_container" style="margin-top:10px;">
+    <p class="field_name">Place of Birth</p><p class="separator" style="color:black;"><pre style="color:black;"> :  Jakarta, Indonesia</pre></p>
+  </div>
+  
+  <div class="input_field_container" style="margin-top:10px;">
+    <p class="field_name">Date of Birth</p><p class="separator" style="color:black;"><pre style="color:black;"> :  09/08/1990</pre></p>
+  </div>
+  <hr class="header_separator"/>
+  
+  <div class="form_container" id="advaced_regis_form_div" style="margin-top:10px;">
+    <form id="advanced_regis_form">
+      <div class="input_field_upload">
+        <p class="field_name">Select picture of your Id : </p>
+      </div>
+      <input id="idInput" style="display:block; margin-top:10px;" class="standalone_text_input" type="file" name="img_id_file">
+      <img style="margin-top:15px; margin-left:5%; margin-right:5%; max-width:90%; display:none;" id="imgPreview" alt="your image" />
+    </form>
+  </div>
+  
+  <div class="input_field_container">
+    <button onclick="submitForm()" content="submit" class="submit_button" type="button" name="submit" id="submit">Submit</button>
+  </div>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="../scripts/file_upload.js"></script>
+  <script>
+    function submitForm(){
+      window.location.href = "./advanced_registration_summary2.html";
+    }
+  </script>
+</body>
+
+</html>
